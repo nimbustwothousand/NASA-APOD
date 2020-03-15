@@ -4,7 +4,7 @@ import moment from 'moment';
 import PrevApodCard from './PrevApodCard';
 require('dotenv').config();
 
-const Previous = () => {
+const Previous = (props) => {
 	const [prevApods, setPrevApods] = useState(null)
 	const start_date = moment().subtract(9, 'days').format('YYYY-MM-DD');
 	const end_date = moment().subtract(1, 'days').format('YYYY-MM-DD');
@@ -19,7 +19,6 @@ const Previous = () => {
 	useEffect(() => {
 		axios.get(`${process.env.REACT_APP_API_URL}?${paramString}`)
 			.then(res => {
-				console.log(res.data);
 				setPrevApods(res.data)
 			})
 			.catch(err => {
@@ -33,7 +32,7 @@ const Previous = () => {
 			</div>
 			<div className="grid grid-cols-3 gap-4">
 				{prevApods ? prevApods.map(prevApod => (
-					<PrevApodCard key={prevApod.apod_site} apod={prevApod} />
+					<PrevApodCard key={prevApod.apod_site} apod={prevApod} changeUrl={props.changeUrl} />
 				)) : <div>Loading...</div>}
 			</div>
 		</div>
