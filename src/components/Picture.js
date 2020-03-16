@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Picture = (props) => {
+
 	return (
 		<div className='container mx-auto py-2 px-6'>
 			<div className='p-2'>
@@ -10,7 +11,7 @@ const Picture = (props) => {
 			{
 				props.media === "image" ?
 					<img src={props.url} alt={props.title} /> :
-					<iframe className='mx-auto' width='560' height='315' src={props.url} title={props.title} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
+					<iframe className='mx-auto' width='560' max-width='100%' height='315' src={props.url} title={props.title} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
 			}
 		</div >
 	)

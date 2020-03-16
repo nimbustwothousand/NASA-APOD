@@ -32,7 +32,7 @@ const Previous = (props) => {
 			</div>
 			<div className="grid grid-cols-3 gap-4">
 				{prevApods ? prevApods.map(prevApod => (
-					<PrevApodCard key={prevApod.apod_site} apod={prevApod} changeUrl={props.changeUrl} />
+					<PrevApodCard key={prevApod.apod_site} apod={prevApod} />
 				)) : <div>Loading...</div>}
 			</div>
 		</div>
