@@ -10,7 +10,7 @@ const Picture = (props) => {
 			</div>
 			{
 				props.media === "image" ?
-					<img src={props.url} alt={props.title} /> :
+					<img className='mx-auto' src={props.url} alt={props.title} /> :
 					<iframe className='mx-auto' width='560' max-width='100%' height='315' src={props.url} title={props.title} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
 			}
 		</div >

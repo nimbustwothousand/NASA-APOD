@@ -12,7 +12,7 @@ const PrevApodCard = ({ apod }) => {
 			<h4 className='text-sm text-center'>{apod.title}</h4>
 			<h6 className="text-xs text-center">{dateString.toDateString()}</h6>
 			<div className='mb-2'>
-				<img className='mx-auto' src={`https://${apod.image_thumbnail}`} alt={apod.title} />
+				<img className='mx-auto h-20' src={`https://${apod.image_thumbnail}`} alt={apod.title} />
 			</div>
 			<div className='py-4 text-center absolute inset-x-0 bottom-0'>
 				<button
